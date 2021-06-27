@@ -1,53 +1,133 @@
 //variables
 $dark: #000000;
 $light: #ffffff;
-$main:#e0e0e0;
-$primary:#8C44F7;
+$main: #e0e0e0;
+$primary: #a9a9a9;
 
 //fonts
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Oswald:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Oswald:wght@400;500;700&display=swap");
 //font-family: 'Montserrat', sans-serif;
 //font-family: 'Oswald', sans-serif;
 //basics
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-body{
-    font-family: 'Montserrat', sans-serif;
-    background-color: $main;
-    color: $dark;
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: $main;
+  color: $dark;
+}
+.container {
+  width: 800px;
+  margin: auto;
 }
 
 //navbar
-nav{
+nav {
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+  //style
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  .logo {
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  ul {
     display: flex;
-    width: 100%;
-    padding: 20px;
-    justify-content: space-around;
-    //style
-    background: linear-gradient(145deg, #f0f0f0, #cacaca);
-    box-shadow: 20px 20px 60px #bebebe,
-                -20px -20px 60px #ffffff;
-    .logo{
-        font-family: 'Oswald', sans-serif;
-        text-transform: uppercase;
-        font-weight: 700;
-    }
-    ul{
-        display: flex;
-        justify-content: space-between;
-        width: 40%;
-        li{
-            list-style-type: none;
-            a{
-                text-decoration: none;
-                color: $dark;
-                &:hover{
-                    color: $primary;
-                    transition: 0.5s;
-                }
-            }
+    justify-content: space-between;
+    width: 40%;
+    li {
+      list-style-type: none;
+      a {
+        text-decoration: none;
+        color: $dark;
+        &:hover {
+          color: $primary;
+          transition: 0.5s;
         }
+      }
     }
+  }
+}
+
+//jumbotron
+.grid-box {
+  display: grid;
+  gap: 10;
+  color: $light;
+  .jumbotron {
+    display: grid;
+    grid-template-areas:
+      "hero subhero-1 subhero-2"
+      "hero subhero-3 subhero-3";
+    .hero {
+      grid-area: hero;
+      padding: 50px;
+      min-height: 300px;
+      background-image: url(../img/image-1.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+    .subhero {
+      display: grid;
+      text-align: center;
+      place-content: center;
+      text-align: center;
+      cursor: pointer;
+    }
+    .subhero-1 {
+      grid-area: subhero-1;
+      background-image: url(../img/ali-choubin-Q1e5mliRpfA-unsplash.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+    .subhero-2 {
+      grid-area: subhero-2;
+      background-image: url(../img/ali-choubin-QLgShyciZX0-unsplash.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+    .subhero-3 {
+      grid-area: subhero-3;
+      background-image: url(../img/artem-ivanchencko-fV4UkFNWwaQ-unsplash.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
+//serch bar
+.search {
+  justify-content: space-between;
+  display: flex;
+  margin-top: 5%;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: $main;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+  input {
+    height: 20px;
+    width: 100%;
+    border: none;
+    background-color: $main;
+    border-radius: 50px;
+    box-shadow: inset 5px 5px 10px #d5d5d5, inset -5px -5px 10px #ebebeb;
+  }
+}
+//break-point
+@media screen and (max-width: 1034px) {
+}
+@media screen and (max-width: 768px) {
+  .nav-item {
+    display: none;
+  }
+  .container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
 }

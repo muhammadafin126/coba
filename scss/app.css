@@ -5,26 +5,30 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #e0e0e0;
   color: #000000;
+}
+
+.container {
+  width: 800px;
+  margin: auto;
 }
 
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   padding: 20px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   background: linear-gradient(145deg, #f0f0f0, #cacaca);
-  -webkit-box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-          box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  -webkit-box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+          box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 }
 
 nav .logo {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -49,8 +53,104 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #8C44F7;
+  color: #a9a9a9;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+.grid-box {
+  display: -ms-grid;
+  display: grid;
+  gap: 10;
+  color: #ffffff;
+}
+
+.grid-box .jumbotron {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "hero subhero-1 subhero-2" "hero subhero-3 subhero-3";
+}
+
+.grid-box .jumbotron .hero {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: hero;
+  padding: 50px;
+  min-height: 300px;
+  background-image: url(../img/image-1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.grid-box .jumbotron .subhero {
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+  place-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.grid-box .jumbotron .subhero-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: subhero-1;
+  background-image: url(../img/ali-choubin-Q1e5mliRpfA-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.grid-box .jumbotron .subhero-2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: subhero-2;
+  background-image: url(../img/ali-choubin-QLgShyciZX0-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.grid-box .jumbotron .subhero-3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: subhero-3;
+  background-image: url(../img/artem-ivanchencko-fV4UkFNWwaQ-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.search {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 5%;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: #e0e0e0;
+  -webkit-box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+          box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+}
+
+.search input {
+  height: 20px;
+  width: 100%;
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  -webkit-box-shadow: inset 5px 5px 10px #d5d5d5, inset -5px -5px 10px #ebebeb;
+          box-shadow: inset 5px 5px 10px #d5d5d5, inset -5px -5px 10px #ebebeb;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-item {
+    display: none;
+  }
+  .container {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=app.css.map */
